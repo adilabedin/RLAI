@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.MLAgents;
 using System;
 using Unity.MLAgents.Sensors;
@@ -11,21 +9,19 @@ public class CarAgent : Agent
 
     [HideInInspector]
     public SoccerBall soccerBall;
+    public Bounds areaBounds;
 
     Rigidbody m_Rigidbody;
     Rigidbody m_Ball;
 
+    public GameObject Stadium;
     public GameObject Ball;
 
     private Vector3 spawnLocation;
     private Quaternion spawnRotation;
 
-    //private Vector3 ballSpawnLocation;
-    //private Quaternion ballSpawnRotation;
-
-    //public event Action OnReset;
-    
-    //public string resetInputAxis = "Submit";
+    private Vector3 ballSpawnLocation;
+    private Quaternion ballSpawnRotation;
 
     public string boostInputAxis = "Boost";
     public float boostDuration = 9999f;
@@ -33,8 +29,11 @@ public class CarAgent : Agent
     public float boostSpeed = 35f;
     public float boostJolt = 5f;
     public bool carIsOnTheGround = true;
-    //public float resetCooldown = 0;
-    //private float nextResetTime = 0;
+
+    public float resetCooldownBall = 10;
+    private float nextResetTimeBall = 10;
+    public float resetCooldownCar = 5;
+    private float nextResetTimeCar = 5;
 
     public float JumpSpeed = 10f;
 
@@ -46,7 +45,6 @@ public class CarAgent : Agent
 
     public float rotationSpeed = 10f;
 
-    public Transform ball;
     public Transform goal1;
     public Transform goal2;
 
@@ -67,93 +65,84 @@ public class CarAgent : Agent
         spawnLocation = m_Rigidbody.transform.position;
         spawnRotation = m_Rigidbody.transform.rotation;
 
-        //ballSpawnLocation = m_Ball.transform.position;
-        //ballSpawnRotation = m_Ball.transform.rotation;
+        ballSpawnLocation = m_Ball.transform.position;
+        ballSpawnRotation = m_Ball.transform.rotation;
 
+        areaBounds = Stadium.GetComponent<Collider>().bounds;
+
+    }
+
+    public Vector3 GetRandomSpawnPos()
+    {
+        var foundNewSpawnLocation = false;
+        var randomSpawnPos = Vector3.zero;
+        while (foundNewSpawnLocation == false)
+        {
+            var randomPosX = UnityEngine.Random.Range(-areaBounds.extents.x * 1,
+                areaBounds.extents.x * 1);
+
+            var randomPosZ = UnityEngine.Random.Range(-areaBounds.extents.z * 1,
+                areaBounds.extents.z * 1);
+
+            randomSpawnPos = Stadium.transform.position + new Vector3(randomPosX, 1f, randomPosZ);
+            if (Physics.CheckBox(randomSpawnPos, new Vector3(2.5f, 0.01f, 2.5f)) == false)
+            {
+                foundNewSpawnLocation = true;
+            }
+        }
+        return randomSpawnPos;
     }
 
 
     public override void OnActionReceived(float[] vectorAction)
     {
-        var jump = (int)vectorAction[0];
-        var boost = (int)vectorAction[1];
-        var turnH = (int)vectorAction[2];
-        var turnV = (int)vectorAction[3];
-        var airRollLeft = (int)vectorAction[4];
-        var airRollRight = (int)vectorAction[5];
-        var resetCar = (int)vectorAction[6];
-
-
-        switch (jump)
+        if (carIsOnTheGround)
         {
-            case 1:
-                Jump();
-                break;
+            MoveAgentGround(vectorAction);
         }
-
-        switch (boost)
+        else
         {
-            case 1:
-                Boost();
-                break;
+            MoveAgentAir(vectorAction);
         }
 
-        switch (turnH)
-        {
-            case 1:
-                RotateLeft();
-                break;
-            case 2:
-                RotateRight();
-                break;
-        }
-
-        switch (turnV)
-        {
-            case 1:
-                RotateUp();
-                break;
-            case 2:
-                RotateDown();
-                break;
-        }
-
-        switch (airRollLeft)
-        {
-            case 1:
-                AirRollLeft();
-                break;
-        }
-
-        switch (airRollRight) { 
-            case 1:
-                AirRollRight();
-                break;
-        }
-
-        switch (resetCar)
-        {
-            case 1:
-                Reset();
-                break;
-        }
-
-        AddReward(-2f / MaxStep);
+        AddReward(-1f / MaxStep);
     }
 
     public override void OnEpisodeBegin()
     {
-
+        ResetBall();
+        ResetCar();
     }
 
     public override void Heuristic(float[] actionsOut)
     {
+
         Array.Clear(actionsOut, 0, actionsOut.Length);
 
+        //Drive
+        if (Input.GetAxis("Forward") > 0)
+        {
+            actionsOut[0] = 1;
+        }
+        //Reverse
+        if (Input.GetAxis("Reverse") > 0)
+        {
+            actionsOut[0] = 2;
+        }
+        //TurnLeft
+        if (Input.GetAxis("TurnLeft") > 0)
+        {
+            actionsOut[0] = 3;
+        }
+        //TurnRight
+        if (Input.GetAxis("TurnRight") > 0)
+        {
+            actionsOut[0] = 4;
+        }
         //jump
         if (Input.GetAxis("jumpKey") > 0)
         {
-            actionsOut[0] = 1;
+            actionsOut[0] = 5;
         }
         //Boost
         if (Input.GetAxis("Boost") > 0)
@@ -163,43 +152,49 @@ public class CarAgent : Agent
         //Rotate Horizontally
         if (Input.GetAxis("Horizontal") > 0)
         {
-            actionsOut[2] = 1;
+            actionsOut[1] = 2;
         }
         if (Input.GetAxis("Horizontal") < 0)
         {
-            actionsOut[2] = 2;
+            actionsOut[1] = 3;
         }
         //Rotate Vertically
         if (Input.GetAxis("Vertical") > 0)
         {
-            actionsOut[3] = 1;
+            actionsOut[1] = 4;
         }
         if (Input.GetAxis("Vertical") < 0)
         {
-            actionsOut[3] = 2;
+            actionsOut[1] = 5;
         }
         //AirRoll / Barrell Roll
         if (Input.GetAxis("AirRollLeft") > 0)
         {
-            actionsOut[4] = 1;
+            actionsOut[1] = 6;
         }
         if (Input.GetAxis("AirRollRight") > 0)
         {
-            actionsOut[5] = 1;
-        }
-        //Reset Car
-        if (Input.GetAxis("ResetCar") > 0)
-        {
-            actionsOut[6] = 1;
+            actionsOut[1] = 7;
         }
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
+
+        sensor.AddObservation(m_Ball.position);
+        sensor.AddObservation(m_Rigidbody.position);
+        sensor.AddObservation(goal1.position);
+        sensor.AddObservation(goal2.position);
+
         //distance to ball
         sensor.AddObservation(Vector3.Distance(m_Ball.transform.position, transform.position));
         //direction to ball
         sensor.AddObservation((m_Ball.transform.position - transform.position).normalized);
+
+        //distance from ball to goal1
+        sensor.AddObservation(Vector3.Distance(m_Ball.transform.position, goal1.transform.position));
+        //distance from ball to goal2
+        sensor.AddObservation(Vector3.Distance(m_Ball.transform.position, goal2.transform.position));
 
         //distance to Goal1
         sensor.AddObservation(Vector3.Distance(goal1.transform.position, transform.position));
@@ -221,20 +216,37 @@ public class CarAgent : Agent
         }
     }
 
-    public void Reset()
+    public void ResetCar()
     {
-
-        //check if we got a rigidbody component on the gameobject
+        //if (Time.time > nextResetTimeCar)
+        //{
         if (m_Rigidbody != null)
         {
-            //if we do... stop the physics simulation from moving it (that is, reduce its velocity to zero)
             m_Rigidbody.velocity = Vector3.zero;
             m_Rigidbody.angularVelocity = Vector3.zero;
         }
 
-        //set the position and rotation of our transform component back to what we had saved in the "Start" function
-        transform.position = spawnLocation;
+        transform.position = GetRandomSpawnPos();
         transform.rotation = spawnRotation;
+        //nextResetTimeCar = Time.time + resetCooldownCar;
+        //}
+
+    }
+
+    public void ResetBall()
+    {
+        //if (Time.time > nextResetTimeBall)
+        //{
+        if (m_Ball != null)
+        {
+            m_Ball.velocity = Vector3.zero;
+            m_Ball.angularVelocity = Vector3.zero;
+        }
+
+        m_Ball.transform.position = ballSpawnLocation;
+        m_Ball.transform.rotation = ballSpawnRotation;
+        //    nextResetTimeBall = Time.time + resetCooldownBall;
+        //}
     }
 
     void Boost()
@@ -245,21 +257,67 @@ public class CarAgent : Agent
     void Update()
     {
         PlayerInput();
-        CloserToGoalReward();
     }
 
-    private void CloserToGoalReward()
+    public void MoveAgentGround(float[] act)
     {
-        if ((m_Ball.velocity.x) >= 0)
-        {
+        var dirToGo = Vector3.zero;
 
-        }
-        else
+        var action = Mathf.FloorToInt(act[0]);
+
+        switch (action)
         {
-            AddReward(-0.1f);
-            print("WrongWay");
+            case 1:
+                m_Rigidbody.velocity = transform.forward * boostJolt; 
+                break;
+            case 2:
+                m_Rigidbody.velocity = transform.forward * -boostJolt; 
+                break;
+            case 3:
+                this.transform.Rotate(Vector3.up, rotationSpeed);
+                break;
+            case 4:
+                this.transform.Rotate(Vector3.down, rotationSpeed);
+                break;
+            case 5:
+                Jump();
+                break;
         }
     }
+
+   void MoveAgentAir(float[] act)
+    { 
+        if (carIsOnTheGround == false)
+        {
+            var action = Mathf.FloorToInt(act[1]);
+
+            switch (action)
+            {
+                case 1:
+                    Boost();
+                    break;
+                case 2:
+                    RotateLeft();
+                    break;
+                case 3:
+                    RotateRight();
+                    break;
+                case 4:
+                    RotateUp();
+                    break;
+                case 5:
+                    RotateDown();
+                    break;
+                case 6:
+                    AirRollLeft();
+                    break;
+                case 7:
+                    AirRollRight();
+                    break;
+            }
+        }
+    }
+
 
     private void OnCollisionEnter(Collision collidedObj)
     {
@@ -276,11 +334,25 @@ public class CarAgent : Agent
 
         if (collidedObj.gameObject.CompareTag("Ball"))
         {
-            AddReward(0.5f);
+            AddReward(1f);
             print("rewardTouch");
+        }
+        if (collidedObj.gameObject.CompareTag("wall"))
+        {
+            AddReward(-0.001f);
+            print("negrewardTouch");
         }
 
     }
+
+    //void ifBallCloseToGoal() {
+    //    float angle = 30;
+    //    float reward = 0;
+    //    float AngleBallNet = Vector3.Angle(m_Ball.velocity, goal1.transform.localPosition - Ball.transform.localPosition);
+    //    if (m_Ball.velocity.magnitude > 0.5f && AngleBallNet < angle)
+    //        reward = scale(0, angle, 0.001f, 0, AngleBallNet);
+
+    //}
 
 
     void FixedUpdate()
