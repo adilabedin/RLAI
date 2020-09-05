@@ -30,10 +30,10 @@ public class CarAgent : Agent
     public float boostJolt = 5f;
     public bool carIsOnTheGround = true;
 
-    public float resetCooldownBall = 10;
-    private float nextResetTimeBall = 10;
-    public float resetCooldownCar = 5;
-    private float nextResetTimeCar = 5;
+    //public float resetCooldownBall = 10;
+    //private float nextResetTimeBall = 10;
+    //public float resetCooldownCar = 5;
+    //private float nextResetTimeCar = 5;
 
     public float JumpSpeed = 10f;
 
