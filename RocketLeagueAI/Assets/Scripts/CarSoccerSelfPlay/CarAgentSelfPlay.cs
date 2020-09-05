@@ -37,8 +37,6 @@ public class CarAgentSelfPlay : Agent
     //private Quaternion ballSpawnRotation;
 
     public string boostInputAxis = "Boost";
-    public float normalSpeed = 20f;
-    public float boostSpeed = 35f;
     public float boostJolt = 5f;
     public bool carIsOnTheGround = true;
 
@@ -59,18 +57,21 @@ public class CarAgentSelfPlay : Agent
     BehaviorParameters m_BehaviorParameters;
     Vector3 m_Transform;
     private int m_PlayerIndex;
+    public bool blueTeamfull = false;
 
     public override void Initialize()
     {
         m_BehaviorParameters = gameObject.GetComponent<BehaviorParameters>();
 
-        if (m_BehaviorParameters.TeamId == (int)Team.Blue)
+        if (blueTeamfull == false)
         {
+            print("o'm blue");
             team = Team.Blue;
             m_Transform = new Vector3(transform.position.x + 0f, transform.position.y + 0f, transform.position.z + 0f);
         }
-        else
+        else if (blueTeamfull == true) 
         {
+            print("i'm orange");
             team = Team.Orange;
             m_Transform = new Vector3(transform.position.x + 0f, transform.position.y + 0f, transform.position.z + 0f);
         }
@@ -284,18 +285,6 @@ private void OnCollisionEnter(Collision collidedObj)
         if (collidedObj.gameObject.CompareTag("Ground"))
         {
             carIsOnTheGround = true;
-        }
-
-        if (collidedObj.gameObject.CompareTag("orangeGoal"))
-        {
-            AddReward(-0.1f);
-            print("NegativeRewardWhenInGoal");
-        }
-
-        if (collidedObj.gameObject.CompareTag("blueGoal"))
-        {
-            AddReward(-0.1f);
-            print("NegativeRewardWhenInGoal");
         }
 
         if (collidedObj.gameObject.CompareTag("Ball"))

@@ -151,8 +151,6 @@ MonoBehaviour:
   Ball: {fileID: 139991516}
   area: {fileID: 1327793092}
   boostInputAxis: Boost
-  normalSpeed: 20
-  boostSpeed: 35
   boostJolt: 5
   carIsOnTheGround: 1
   JumpSpeed: 10
@@ -160,6 +158,7 @@ MonoBehaviour:
   goal1: {fileID: 234135411}
   goal2: {fileID: 1704941291}
   team: 1
+  blueTeamfull: 1
 --- !u!114 &60862240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,18 +1560,22 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_Target
       value: 
-      objectReference: {fileID: 60862238}
+      objectReference: {fileID: 2138527811}
     - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_RollSpeed
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_TurnSpeed
-      value: 19
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_SpinTurnLimit
       value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
@@ -1770,8 +1773,6 @@ MonoBehaviour:
   Ball: {fileID: 139991516}
   area: {fileID: 1327793092}
   boostInputAxis: Boost
-  normalSpeed: 20
-  boostSpeed: 35
   boostJolt: 5
   carIsOnTheGround: 1
   JumpSpeed: 10
@@ -1779,6 +1780,7 @@ MonoBehaviour:
   goal1: {fileID: 234135411}
   goal2: {fileID: 1704941291}
   team: 0
+  blueTeamfull: 0
 --- !u!114 &2138527814
 MonoBehaviour:
   m_ObjectHideFlags: 0
