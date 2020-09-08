@@ -14,12 +14,10 @@ public class SoccerBallSelfPlay : MonoBehaviour
         if (col.gameObject.CompareTag(orangeGoalTag)) //ball touched purple goal
         {
             area.GoalTouched(CarAgentSelfPlay.Team.Blue);
-            print("Goal Scored");
         }
         if (col.gameObject.CompareTag(blueGoalTag)) //ball touched blue goal
         {
             area.GoalTouched(CarAgentSelfPlay.Team.Orange);
-            print("Goal Scored");
         }
     }
 }

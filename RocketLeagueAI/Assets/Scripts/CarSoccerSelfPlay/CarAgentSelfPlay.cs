@@ -50,6 +50,7 @@ public class CarAgentSelfPlay : Agent
 
     public float rotationSpeed = 10f;
 
+    public Transform car;
     public Transform goal1;
     public Transform goal2;
     public Team team;
@@ -65,13 +66,11 @@ public class CarAgentSelfPlay : Agent
 
         if (blueTeamfull == false)
         {
-            print("o'm blue");
             team = Team.Blue;
             m_Transform = new Vector3(transform.position.x + 0f, transform.position.y + 0f, transform.position.z + 0f);
         }
         else if (blueTeamfull == true) 
         {
-            print("i'm orange");
             team = Team.Orange;
             m_Transform = new Vector3(transform.position.x + 0f, transform.position.y + 0f, transform.position.z + 0f);
         }
@@ -185,11 +184,16 @@ public class CarAgentSelfPlay : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-
+        sensor.AddObservation(car.position);
         sensor.AddObservation(m_Ball.position);
         sensor.AddObservation(agentRb.position);
         sensor.AddObservation(goal1.position);
         sensor.AddObservation(goal2.position);
+
+        //distance to opponent
+        sensor.AddObservation(Vector3.Distance(car.transform.position, transform.position));
+        //direction to ball
+        sensor.AddObservation((car.transform.position - transform.position).normalized);
 
         //distance to ball
         sensor.AddObservation(Vector3.Distance(m_Ball.transform.position, transform.position));
@@ -280,7 +284,7 @@ public class CarAgentSelfPlay : Agent
     }
 
 
-private void OnCollisionEnter(Collision collidedObj)
+    private void OnCollisionEnter(Collision collidedObj)
     {
         if (collidedObj.gameObject.CompareTag("Ground"))
         {
@@ -289,7 +293,7 @@ private void OnCollisionEnter(Collision collidedObj)
 
         if (collidedObj.gameObject.CompareTag("Ball"))
         {
-            AddReward(1f);
+            AddReward(0.2f);
             print("rewardTouch");
         }
 

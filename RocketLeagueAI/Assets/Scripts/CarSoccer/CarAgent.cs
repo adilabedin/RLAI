@@ -10,6 +10,13 @@ public class CarAgent : Agent
     [HideInInspector]
     public SoccerBall soccerBall;
     public Bounds areaBounds;
+    public float timePenalty;
+
+    public enum Team
+    {
+        Blue = 0,
+        Orange = 1
+    }
 
     Rigidbody m_Rigidbody;
     Rigidbody m_Ball;
@@ -24,9 +31,6 @@ public class CarAgent : Agent
     private Quaternion ballSpawnRotation;
 
     public string boostInputAxis = "Boost";
-    public float boostDuration = 9999f;
-    public float normalSpeed = 20f;
-    public float boostSpeed = 35f;
     public float boostJolt = 5f;
     public bool carIsOnTheGround = true;
 
@@ -45,13 +49,26 @@ public class CarAgent : Agent
 
     public float rotationSpeed = 10f;
 
+    public Transform car;
     public Transform goal1;
     public Transform goal2;
+    public Team team;
+
+    Vector3 m_Transform;
 
     public void ScoredAGoal()
     {
-        AddReward(5f);
-        print("RewardForScoring");
+        AddReward(1f);
+        print("ReinforcementBlueScored");
+
+        EndEpisode();
+
+    }
+
+    public void ConcededAGoal()
+    {
+        AddReward(-1f);
+        print("How did you concede???");
 
         EndEpisode();
 
@@ -59,6 +76,10 @@ public class CarAgent : Agent
 
     public override void Initialize()
     {
+
+        team = Team.Blue;
+        m_Transform = new Vector3(transform.position.x + 0f, transform.position.y + 0f, transform.position.z + 0f);
+
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Ball = Ball.GetComponent<Rigidbody>();
 
@@ -181,10 +202,16 @@ public class CarAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
 
+        sensor.AddObservation(car.position);
         sensor.AddObservation(m_Ball.position);
         sensor.AddObservation(m_Rigidbody.position);
         sensor.AddObservation(goal1.position);
         sensor.AddObservation(goal2.position);
+
+        //distance to opponent
+        sensor.AddObservation(Vector3.Distance(car.transform.position, transform.position));
+        //direction to ball
+        sensor.AddObservation((car.transform.position - transform.position).normalized);
 
         //distance to ball
         sensor.AddObservation(Vector3.Distance(m_Ball.transform.position, transform.position));
@@ -326,21 +353,10 @@ public class CarAgent : Agent
             carIsOnTheGround = true;
         }
 
-        if (collidedObj.gameObject.CompareTag("Goal"))
-        {
-            AddReward(-0.1f);
-            print("NegativeRewardWhenInGoal");
-        }
-
         if (collidedObj.gameObject.CompareTag("Ball"))
         {
-            AddReward(1f);
+            AddReward(0.2f);
             print("rewardTouch");
-        }
-        if (collidedObj.gameObject.CompareTag("wall"))
-        {
-            AddReward(-0.001f);
-            print("negrewardTouch");
         }
 
     }

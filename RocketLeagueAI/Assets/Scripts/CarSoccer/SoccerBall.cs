@@ -8,14 +8,21 @@ public class SoccerBall : MonoBehaviour
 {
 
     public CarAgent agent;
+    public string orangeGoalTag;
+    public string blueGoalTag;
 
     void OnCollisionEnter(Collision col)
     {
         // Touched goal.
-        if (col.gameObject.CompareTag("Goal"))
+        if (col.gameObject.CompareTag(orangeGoalTag))
         {
             GameManager.gameManager.GoalScored();
             agent.ScoredAGoal();
+        }
+        if (col.gameObject.CompareTag(blueGoalTag))
+        {
+            GameManager.gameManager.GoalScored();
+            agent.ConcededAGoal();
         }
     }
 }
