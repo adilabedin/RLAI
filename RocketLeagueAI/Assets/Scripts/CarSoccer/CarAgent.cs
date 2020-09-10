@@ -67,8 +67,8 @@ public class CarAgent : Agent
 
     public void ConcededAGoal()
     {
-        AddReward(-1f);
-        print("How did you concede???");
+        AddReward(-10f);
+        print("How did you concede????");
 
         EndEpisode();
 
