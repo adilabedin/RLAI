@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 //Create our new type of event... It will trigger when we score a goal
 [System.Serializable]
-public class GoalEvents : UnityEvent<int> { }
+public class GoalEventss : UnityEvent<int> { }
 
 public class PlayState
 {
@@ -54,7 +54,7 @@ public class GameManagerSelfPlay : MonoBehaviour
 
 
     //store a reference to all the things we need to tell when a goal is scored
-    public GoalEvents OnGoalScored;
+    public GoalEventss OnGoalScored;
 
     //When we are told a goal is scored...
     public void GoalScored()

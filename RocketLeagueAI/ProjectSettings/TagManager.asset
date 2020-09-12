@@ -12,6 +12,16 @@ TagManager:
   - Goal
   - blueCar
   - orangeCar
+  - curriculumReward
+  - curriculumReward1
+  - curriculumReward2
+  - curriculumNegReward
+  - curriculumReward03
+  - curriculumReward02
+  - curriculumReward12
+  - curriculumReward13
+  - curriculumReward22
+  - curriculumReward23
   layers:
   - Default
   - TransparentFX
