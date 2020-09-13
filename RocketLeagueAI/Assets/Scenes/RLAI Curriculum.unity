@@ -1278,12 +1278,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &72838767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 72838766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &72838768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -1567,7 +1561,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 2142692614}
+  Stadium: {fileID: 2036192994}
   Ball: {fileID: 1137699054}
   boostInputAxis: Boost
   boostJolt: 5
@@ -1878,12 +1872,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &95385694 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 95385693}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &95385695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -2355,6 +2343,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &147740238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 873801945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &154307590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,7 +3957,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 95385694}
+  Stadium: {fileID: 1116327165}
   Ball: {fileID: 692627780}
   boostInputAxis: Boost
   boostJolt: 5
@@ -4267,6 +4261,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279628120}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &287111796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 359645174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &290389687
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,12 +5051,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &359645175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 359645174}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &359645176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -6763,7 +6757,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1108989688}
+  Stadium: {fileID: 568085162}
   Ball: {fileID: 1547297626}
   boostInputAxis: Boost
   boostJolt: 5
@@ -7769,6 +7763,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &510495808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1047612824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &512797564
 GameObject:
   m_ObjectHideFlags: 0
@@ -8320,7 +8320,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 848521538}
+  Stadium: {fileID: 613823495}
   Ball: {fileID: 1404801401}
   boostInputAxis: Boost
   boostJolt: 5
@@ -9137,6 +9137,12 @@ MonoBehaviour:
   agent: {fileID: 722366037}
   orangeGoalTag: orangeGoal
   blueGoalTag: blueGoal
+--- !u!1 &568085162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1108989687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &568598891
 GameObject:
   m_ObjectHideFlags: 0
@@ -9315,12 +9321,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &574378093 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 574378092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &574378094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -9659,6 +9659,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &613823495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 848521537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &616420475
 GameObject:
   m_ObjectHideFlags: 0
@@ -9988,6 +9994,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &662377739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 72838766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &669251627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11125,7 +11137,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 574378093}
+  Stadium: {fileID: 1225279668}
   Ball: {fileID: 563227025}
   boostInputAxis: Boost
   boostJolt: 5
@@ -12032,12 +12044,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &817911860 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 817911859}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &817911861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -12251,12 +12257,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &848521538 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 848521537}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &848521539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -12951,12 +12951,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &873801946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 873801945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &873801947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -13320,7 +13314,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1746166937}
+  Stadium: {fileID: 1370662586}
   Ball: {fileID: 235969387}
   boostInputAxis: Boost
   boostJolt: 5
@@ -14911,12 +14905,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &1047612825 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1047612824}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1047612826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -15786,7 +15774,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1922098037}
+  Stadium: {fileID: 1466505180}
   Ball: {fileID: 1584888536}
   boostInputAxis: Boost
   boostJolt: 5
@@ -16320,12 +16308,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &1108989688 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1108989687}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1108989689 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -16423,6 +16405,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115985240}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1116327165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 95385693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1118187483
 GameObject:
   m_ObjectHideFlags: 0
@@ -17601,6 +17589,12 @@ Transform:
   m_Father: {fileID: 1066845906}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1183396196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1203468226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1183564728
 GameObject:
   m_ObjectHideFlags: 0
@@ -18093,12 +18087,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &1203468227 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1203468226}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1203468228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -18467,6 +18455,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222984918}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1225279668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 574378092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227543645
 GameObject:
   m_ObjectHideFlags: 0
@@ -20333,6 +20327,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369106137}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1370662586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1746166936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1370705593
 GameObject:
   m_ObjectHideFlags: 0
@@ -21260,6 +21260,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1447043327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1490754118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1462771812
 GameObject:
   m_ObjectHideFlags: 0
@@ -21337,6 +21343,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1466505180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1922098036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1469554814
 GameObject:
   m_ObjectHideFlags: 0
@@ -21720,7 +21732,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1047612825}
+  Stadium: {fileID: 510495808}
   Ball: {fileID: 1146306800}
   boostInputAxis: Boost
   boostJolt: 5
@@ -21987,12 +21999,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &1490754119 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1490754118}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1490754120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -23585,7 +23591,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 359645175}
+  Stadium: {fileID: 287111796}
   Ball: {fileID: 1554823099}
   boostInputAxis: Boost
   boostJolt: 5
@@ -25266,7 +25272,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1203468227}
+  Stadium: {fileID: 1183396196}
   Ball: {fileID: 1072448050}
   boostInputAxis: Boost
   boostJolt: 5
@@ -26016,12 +26022,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &1746166937 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1746166936}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1746166938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -26220,15 +26220,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!4 &1770007006 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
+--- !u!1 &1770007005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
     type: 3}
   m_PrefabInstance: {fileID: 1770007004}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1770007007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
+--- !u!4 &1770007006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
     type: 3}
   m_PrefabInstance: {fileID: 1770007004}
   m_PrefabAsset: {fileID: 0}
@@ -27596,7 +27596,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1490754119}
+  Stadium: {fileID: 1447043327}
   Ball: {fileID: 1119520965}
   boostInputAxis: Boost
   boostJolt: 5
@@ -28185,17 +28185,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &1922098037 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1922098036}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1922098038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
     type: 3}
   m_PrefabInstance: {fileID: 1922098036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923227247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 817911859}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923543668
 GameObject:
@@ -28597,6 +28597,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1935862592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1999007716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1937065874
 GameObject:
   m_ObjectHideFlags: 0
@@ -28874,7 +28880,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 873801946}
+  Stadium: {fileID: 147740238}
   Ball: {fileID: 1668106754}
   boostInputAxis: Boost
   boostJolt: 5
@@ -29241,7 +29247,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1770007007}
+  Stadium: {fileID: 1770007005}
   Ball: {fileID: 461963716}
   boostInputAxis: Boost
   boostJolt: 5
@@ -29893,12 +29899,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &1999007717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1999007716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1999007718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,
@@ -30361,7 +30361,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 1999007717}
+  Stadium: {fileID: 1935862592}
   Ball: {fileID: 523340446}
   boostInputAxis: Boost
   boostJolt: 5
@@ -30527,6 +30527,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2036192994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2142692613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2042835552
 GameObject:
   m_ObjectHideFlags: 0
@@ -30804,7 +30810,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 817911860}
+  Stadium: {fileID: 1923227247}
   Ball: {fileID: 669251628}
   boostInputAxis: Boost
   boostJolt: 5
@@ -31203,7 +31209,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
-  Stadium: {fileID: 72838767}
+  Stadium: {fileID: 662377739}
   Ball: {fileID: 672941962}
   boostInputAxis: Boost
   boostJolt: 5
@@ -31947,12 +31953,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
---- !u!1 &2142692614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2142692613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2142692615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485474, guid: f0ea725277875e0419a3c8fe5267e52c,

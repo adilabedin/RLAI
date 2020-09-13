@@ -87,7 +87,7 @@ public class CarAgentCurriculum : Agent
     public void CurriculumNegReward()
     {
         AddReward(-5f);
-        print("How did you concede????");
+        print("Neg");
 
         EndEpisode();
 
@@ -440,8 +440,6 @@ public class CarAgentCurriculum : Agent
         {
             AddReward(1f);
             print("rewardTouch");
-
-            EndEpisode();
         }
 
     }
