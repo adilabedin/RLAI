@@ -35,40 +35,37 @@ public class SoccerBallCurriculum : MonoBehaviour
         {
             agent.CurriculumReward();
         }
+        if (other.tag == "curriculumReward02")
+        {
+            agent.CurriculumReward01();
+        }
+        if (other.tag == "curriculumReward03")
+        {
+            agent.CurriculumReward02();
+        }
+        if (other.tag == "curriculumReward1")
+        {
+            agent.CurriculumReward1();
+        }
         if (other.tag == "curriculumReward12")
         {
-            agent.CurriculumReward();
+            agent.CurriculumReward11();
         }
         if (other.tag == "curriculumReward13")
         {
-            agent.CurriculumReward();
+            agent.CurriculumReward12();
         }
         if (other.tag == "curriculumReward2")
         {
-            GameManagerCurriculum.gameManager.GoalScored();
-            agent.CurriculumReward1();
+            agent.CurriculumReward2();
         }
         if (other.tag == "curriculumReward22")
         {
-            GameManagerCurriculum.gameManager.GoalScored();
-            agent.CurriculumReward1();
+            agent.CurriculumReward21();
         }
         if (other.tag == "curriculumReward23")
         {
-            GameManagerCurriculum.gameManager.GoalScored();
-            agent.CurriculumReward1();
-        }
-        if (other.tag == "curriculumReward3")
-        {
-            agent.CurriculumReward2();
-        }
-        if (other.tag == "curriculumReward32")
-        {
-            agent.CurriculumReward2();
-        }
-        if (other.tag == "curriculumReward33")
-        {
-            agent.CurriculumReward2();
+            agent.CurriculumReward22();
         }
         if (other.tag == "curriculumNegReward")
         {

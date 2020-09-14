@@ -68,8 +68,8 @@ public class CarAgentCurriculum : Agent
 
     public void ScoredAGoal()
     {
-        AddReward(10f);
-        print("ReinforcementBlueScored");
+        AddReward(100f);
+        print("Scored");
 
         EndEpisode();
 
@@ -96,27 +96,65 @@ public class CarAgentCurriculum : Agent
     public void CurriculumReward ()
     {
         AddReward(2f);
-        print("Passed Zone 1");
+        print("Passed Zone 1c");
 
-        EndEpisode();
+
+    }
+
+    public void CurriculumReward01()
+    {
+        AddReward(0.1f);
+        print("Passed Zone 1s.1");
+
+
+    }
+
+    public void CurriculumReward02()
+    {
+        AddReward(0.1f);
+        print("Passed Zone 1s.2");
+
 
     }
 
     public void CurriculumReward1()
     {
-        AddReward(4f);
-        print("Passed Zone 2");
+        AddReward(2f);
+        print("Passed Zone 2c");
 
-        EndEpisode();
+    }
 
+    public void CurriculumReward11()
+    {
+        AddReward(0.1f);
+        print("Passed Zone 2s.1");
+
+    }
+
+    public void CurriculumReward12()
+    {
+        AddReward(0.1f);
+        print("Passed Zone 2s.2");
     }
 
     public void CurriculumReward2()
     {
         AddReward(6f);
-        print("Passed Zone 3");
+        print("Passed Zone 3c");
 
-        EndEpisode();
+    }
+
+    public void CurriculumReward21()
+    {
+        AddReward(0.1f);
+        print("Passed Zone 3s.1");
+
+    }
+
+    public void CurriculumReward22()
+    {
+        AddReward(0.1f);
+        print("Passed Zone 3s.2");
 
     }
 
@@ -438,7 +476,7 @@ public class CarAgentCurriculum : Agent
 
         if (collidedObj.gameObject.CompareTag("Ball"))
         {
-            AddReward(1f);
+            AddReward(2f);
             print("rewardTouch");
         }
 
