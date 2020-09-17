@@ -1514,7 +1514,7 @@ MonoBehaviour:
     VectorActionSize: 0600000008000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 11400000, guid: 3ab7e1924092948d6812454d63ff69c5, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SelfPlay
@@ -26678,7 +26678,7 @@ MonoBehaviour:
     VectorActionSize: 0600000008000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 11400000, guid: 3ab7e1924092948d6812454d63ff69c5, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SelfPlay

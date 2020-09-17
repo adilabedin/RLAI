@@ -2,6 +2,7 @@
 using Unity.MLAgents;
 using System;
 using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Policies;
 
 public class CarAgent : Agent
 {
@@ -18,17 +19,19 @@ public class CarAgent : Agent
         Orange = 1
     }
 
-    Rigidbody m_Rigidbody;
+    private Rigidbody m_Rigidbody;
     Rigidbody m_Ball;
 
     public GameObject Stadium;
     public GameObject Ball;
 
-    private Vector3 spawnLocation;
+    public GameManager area;
+
+    //private Vector3 spawnLocation;
     private Quaternion spawnRotation;
 
-    private Vector3 ballSpawnLocation;
-    private Quaternion ballSpawnRotation;
+    //private Vector3 ballSpawnLocation;
+    //private Quaternion ballSpawnRotation;
 
     public string boostInputAxis = "Boost";
     public float boostJolt = 5f;
@@ -49,6 +52,8 @@ public class CarAgent : Agent
 
     public float rotationSpeed = 10f;
 
+    private int m_PlayerIndex;
+
     public Transform car;
     public Transform goal1;
     public Transform goal2;
@@ -56,40 +61,35 @@ public class CarAgent : Agent
 
     Vector3 m_Transform;
 
-    public void ScoredAGoal()
-    {
-        AddReward(1f);
-        print("ReinforcementBlueScored");
+    BehaviorParameters m_BehaviorParameters;
 
-        EndEpisode();
-
-    }
-
-    public void ConcededAGoal()
-    {
-        AddReward(-10f);
-        print("How did you concede????");
-
-        EndEpisode();
-
-    }
 
     public override void Initialize()
     {
-
+        m_BehaviorParameters = gameObject.GetComponent<BehaviorParameters>();
         team = Team.Blue;
         m_Transform = new Vector3(transform.position.x + 0f, transform.position.y + 0f, transform.position.z + 0f);
 
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Ball = Ball.GetComponent<Rigidbody>();
 
-        spawnLocation = m_Rigidbody.transform.position;
-        spawnRotation = m_Rigidbody.transform.rotation;
+        m_Rigidbody = GetComponent<Rigidbody>();
+        m_Ball = Ball.GetComponent<Rigidbody>();
 
-        ballSpawnLocation = m_Ball.transform.position;
-        ballSpawnRotation = m_Ball.transform.rotation;
+        var ps = new PlayStates
+        {
+            CarAgent = m_Rigidbody,
+            startingPosition = transform.position,
+            CarAgentScript = this,
+        };
 
-        areaBounds = Stadium.GetComponent<Collider>().bounds;
+        area.playStates.Add(ps);
+        m_PlayerIndex = area.playStates.IndexOf(ps);
+        ps.playerIndx = m_PlayerIndex;
+
+    
+
+    areaBounds = Stadium.GetComponent<Collider>().bounds;
 
     }
 
@@ -131,9 +131,15 @@ public class CarAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        ResetBall();
+        SetResetParameters();
         ResetCar();
     }
+
+    public void SetResetParameters()
+    {
+        area.ResetBall();
+    }
+
 
     public override void Heuristic(float[] actionsOut)
     {
@@ -258,22 +264,6 @@ public class CarAgent : Agent
         //nextResetTimeCar = Time.time + resetCooldownCar;
         //}
 
-    }
-
-    public void ResetBall()
-    {
-        //if (Time.time > nextResetTimeBall)
-        //{
-        if (m_Ball != null)
-        {
-            m_Ball.velocity = Vector3.zero;
-            m_Ball.angularVelocity = Vector3.zero;
-        }
-
-        m_Ball.transform.position = ballSpawnLocation;
-        m_Ball.transform.rotation = ballSpawnRotation;
-        //    nextResetTimeBall = Time.time + resetCooldownBall;
-        //}
     }
 
     void Boost()

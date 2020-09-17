@@ -210,7 +210,7 @@ Transform:
   m_LocalScale: {x: 2.666667, y: 5.3333335, z: 0.66666675}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 126.57201, z: 0}
 --- !u!65 &18865762
 BoxCollider:
@@ -435,7 +435,7 @@ Transform:
   m_LocalScale: {x: 10, y: 5.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &345293583
 GameObject:
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9673f65c2708a4fccad0f8b450e187c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1955825466}
+  agent: {fileID: 0}
   orangeGoalTag: orangeGoal
   blueGoalTag: blueGoal
 --- !u!1 &469871878
@@ -715,7 +715,7 @@ Transform:
   m_LocalScale: {x: 6, y: 5.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -24.658, z: 0}
 --- !u!65 &503368266
 BoxCollider:
@@ -999,8 +999,55 @@ Transform:
   m_LocalScale: {x: 20, y: 5.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1145952959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1145952960}
+  - component: {fileID: 1145952961}
+  m_Layer: 0
+  m_Name: GameManagerCurriculum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1145952960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145952959}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.4400004, y: 33.482, z: -0.20872752}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_Children: []
+  m_Father: {fileID: 1789490456}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1145952961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145952959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a316f1882e0ed48c4baf44ef8b102b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 461963716}
+  ballRb: {fileID: 0}
+  ballStartingPos: {x: 0, y: 0, z: 0}
+  canResetBall: 0
 --- !u!1 &1227543645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1090,7 @@ Transform:
   m_LocalScale: {x: 20, y: 5.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369106137
 GameObject:
@@ -1291,7 +1338,7 @@ Transform:
   m_LocalScale: {x: 2.6666672, y: 5.3333335, z: 0.6666668}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 52.135002, z: 0}
 --- !u!65 &1577706601
 BoxCollider:
@@ -1335,7 +1382,7 @@ Transform:
   m_LocalScale: {x: 6, y: 5.3333335, z: 0.66666687}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 26.802002, z: 0}
 --- !u!65 &1600035117
 BoxCollider:
@@ -1392,7 +1439,7 @@ Transform:
   m_LocalScale: {x: 6.666667, y: 5.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1770007004
 PrefabInstance:
@@ -1497,7 +1544,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f0ea725277875e0419a3c8fe5267e52c, type: 3}
 --- !u!1 &1770007005 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 118210, guid: f0ea725277875e0419a3c8fe5267e52c,
+  m_CorrespondingSourceObject: {fileID: 147680, guid: f0ea725277875e0419a3c8fe5267e52c,
     type: 3}
   m_PrefabInstance: {fileID: 1770007004}
   m_PrefabAsset: {fileID: 0}
@@ -1646,6 +1693,7 @@ Transform:
   - {fileID: 1784535681}
   - {fileID: 1530356554}
   - {fileID: 512797565}
+  - {fileID: 1145952960}
   - {fileID: 1227543647}
   - {fileID: 1600035116}
   - {fileID: 503368265}
@@ -1779,7 +1827,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -29.322, z: 0}
 --- !u!65 &1848017782
 BoxCollider:
@@ -1934,7 +1982,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955825464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55122b016656741bcadebccf98bc4638, type: 3}
+  m_Script: {fileID: 11500000, guid: f68779d32d6354987bb515670fb20244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
@@ -1944,12 +1992,13 @@ MonoBehaviour:
   horizontalInputName: AirRollHorizontal
   verticalInputName: AirRollVertical
   soccerBall: {fileID: 0}
-  areaBounds:
+  gameAreaBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   timePenalty: 0
   Stadium: {fileID: 1770007005}
   Ball: {fileID: 461963716}
+  gameArea: {fileID: 0}
   boostInputAxis: Boost
   boostJolt: 5
   carIsOnTheGround: 1
@@ -2258,7 +2307,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1789490456}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 37.317, z: 0}
 --- !u!65 &2139508089
 BoxCollider:

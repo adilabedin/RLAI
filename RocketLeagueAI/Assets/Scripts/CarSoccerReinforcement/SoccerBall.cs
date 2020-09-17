@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.MLAgents;
 
 public class SoccerBall : MonoBehaviour
 {
-
-    public CarAgent agent;
+    [HideInInspector]
+    public GameManager area;
     public string orangeGoalTag;
     public string blueGoalTag;
 
     void OnCollisionEnter(Collision col)
     {
-        // Touched goal.
-        if (col.gameObject.CompareTag(orangeGoalTag))
+        if (col.gameObject.CompareTag(orangeGoalTag)) 
         {
-            agent.ScoredAGoal();
+            area.GoalTouched(CarAgent.Team.Blue);
         }
         if (col.gameObject.CompareTag(blueGoalTag))
         {
-            agent.ConcededAGoal();
+            area.GoalTouched(CarAgent.Team.Orange);
         }
     }
+
 }
+

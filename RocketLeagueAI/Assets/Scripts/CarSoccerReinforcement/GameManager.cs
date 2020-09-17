@@ -5,25 +5,25 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class PlayerState
+public class PlayStates
 {
-    public int playerIndex;
+    public int playerIndx;
     [FormerlySerializedAs("agentRB")]
-    public Rigidbody agentRb;
-    public Vector3 startingPos;
-    public CarAgentSelfPlay agentScript;
+    public Rigidbody CarAgent;
+    public Vector3 startingPosition;
+    public CarAgent CarAgentScript;
     public float ballPosReward;
 }
 
-public class GameManagerSelfPlay : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 
     public GameObject ball;
     [FormerlySerializedAs("ballRB")]
     [HideInInspector]
     public Rigidbody ballRb;
-    SoccerBallSelfPlay m_BallController;
-    public List<PlayerState> playerState = new List<PlayerState>();
+    SoccerBall m_BallController;
+    public List<PlayStates> playStates = new List<PlayStates>();
     [HideInInspector]
     public Vector3 ballStartingPos;
     [HideInInspector]
@@ -35,30 +35,30 @@ public class GameManagerSelfPlay : MonoBehaviour
     {
         canResetBall = true;
         ballRb = ball.GetComponent<Rigidbody>();
-        m_BallController = ball.GetComponent<SoccerBallSelfPlay>();
+        m_BallController = ball.GetComponent<SoccerBall>();
         m_BallController.area = this;
         ballStartingPos = ball.transform.position;
 
         m_ResetParams = Academy.Instance.EnvironmentParameters;
     }
 
-    public static GameManagerSelfPlay gameManager;
+    public static GameManager gameManager;
 
 
-    public void GoalTouched(CarAgentSelfPlay.Team scoredTeam)
+    public void GoalTouched(CarAgent.Team scoredTeam)
     {
-        foreach (var ps in playerState)
+        foreach (var ps in playStates)
         {
-            if (ps.agentScript.team == scoredTeam)
+            if (ps.CarAgentScript.team == scoredTeam)
             {
                 print(scoredTeam + "Scored");
-                ps.agentScript.AddReward(1 + ps.agentScript.timePenalty);
+                ps.CarAgentScript.AddReward(1 + ps.CarAgentScript.timePenalty);
             }
             else
             {
-                ps.agentScript.AddReward(-1);
+                ps.CarAgentScript.AddReward(-1);
             }
-            ps.agentScript.EndEpisode();
+            ps.CarAgentScript.EndEpisode();
 
         }
     }
@@ -70,3 +70,4 @@ public class GameManagerSelfPlay : MonoBehaviour
         ballRb.angularVelocity = Vector3.zero;
     }
 }
+

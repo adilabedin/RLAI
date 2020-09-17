@@ -1,31 +1,23 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.MLAgents;
 
 public class SoccerBallCurriculum : MonoBehaviour
 {
-
-    public CarAgentCurriculum agent;
+    [HideInInspector]
+    public GameManagerCurriculum gameArea;
     public string orangeGoalTag;
     public string blueGoalTag;
-    //public string curriculumReward;
-    //public string curriculumReward1;
-    //public string curriculumReward2;
 
     void OnCollisionEnter(Collision col)
     {
-        // Touched goal.
         if (col.gameObject.CompareTag(orangeGoalTag))
         {
-            //GameManagerCurriculum.gameManager.GoalScored();
-            agent.ScoredAGoal();
+            gameArea.GoalTouched(CarAgentCurriculum.Team.Blue);
         }
         if (col.gameObject.CompareTag(blueGoalTag))
         {
-            //GameManagerCurriculum.gameManager.GoalScored();
-            agent.ConcededAGoal();
+            gameArea.GoalTouched(CarAgentCurriculum.Team.Blue);
         }
     }
 
@@ -33,43 +25,43 @@ public class SoccerBallCurriculum : MonoBehaviour
     {
         if (other.tag == "curriculumReward")
         {
-            agent.CurriculumReward();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward02")
         {
-            agent.CurriculumReward01();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward03")
         {
-            agent.CurriculumReward02();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward1")
         {
-            agent.CurriculumReward1();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward12")
         {
-            agent.CurriculumReward11();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward13")
         {
-            agent.CurriculumReward12();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward2")
         {
-            agent.CurriculumReward2();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward22")
         {
-            agent.CurriculumReward21();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumReward23")
         {
-            agent.CurriculumReward22();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
         if (other.tag == "curriculumNegReward")
         {
-            agent.CurriculumNegReward();
+            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
         }
     }
 }

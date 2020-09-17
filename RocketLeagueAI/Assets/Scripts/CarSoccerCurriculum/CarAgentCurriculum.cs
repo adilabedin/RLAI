@@ -2,6 +2,7 @@
 using Unity.MLAgents;
 using System;
 using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Policies;
 
 public class CarAgentCurriculum : Agent
 {
@@ -9,7 +10,7 @@ public class CarAgentCurriculum : Agent
 
     [HideInInspector]
     public SoccerBall soccerBall;
-    public Bounds areaBounds;
+    public Bounds gameAreaBounds;
     public float timePenalty;
 
     public enum Team
@@ -23,6 +24,8 @@ public class CarAgentCurriculum : Agent
 
     public GameObject Stadium;
     public GameObject Ball;
+
+    public GameManagerCurriculum gameArea;
 
     private Vector3 spawnLocation;
     private Quaternion spawnRotation;
@@ -49,6 +52,8 @@ public class CarAgentCurriculum : Agent
 
     public float rotationSpeed = 10f;
 
+    private int m_PlayerIndex;
+
     public Transform car;
     public Transform goal1;
     public Transform goal2;
@@ -66,114 +71,34 @@ public class CarAgentCurriculum : Agent
 
     Vector3 m_Transform;
 
-    public void ScoredAGoal()
-    {
-        AddReward(100f);
-        print("Scored");
-
-        EndEpisode();
-
-    }
-
-    public void ConcededAGoal()
-    {
-        AddReward(-10f);
-        print("How did you concede????");
-
-        EndEpisode();
-
-    }
-
-    public void CurriculumNegReward()
-    {
-        AddReward(-5f);
-        print("Neg");
-
-        EndEpisode();
-
-    }
-
-    public void CurriculumReward ()
-    {
-        AddReward(2f);
-        print("Passed Zone 1c");
-
-
-    }
-
-    public void CurriculumReward01()
-    {
-        AddReward(0.1f);
-        print("Passed Zone 1s.1");
-
-
-    }
-
-    public void CurriculumReward02()
-    {
-        AddReward(0.1f);
-        print("Passed Zone 1s.2");
-
-
-    }
-
-    public void CurriculumReward1()
-    {
-        AddReward(2f);
-        print("Passed Zone 2c");
-
-    }
-
-    public void CurriculumReward11()
-    {
-        AddReward(0.1f);
-        print("Passed Zone 2s.1");
-
-    }
-
-    public void CurriculumReward12()
-    {
-        AddReward(0.1f);
-        print("Passed Zone 2s.2");
-    }
-
-    public void CurriculumReward2()
-    {
-        AddReward(6f);
-        print("Passed Zone 3c");
-
-    }
-
-    public void CurriculumReward21()
-    {
-        AddReward(0.1f);
-        print("Passed Zone 3s.1");
-
-    }
-
-    public void CurriculumReward22()
-    {
-        AddReward(0.1f);
-        print("Passed Zone 3s.2");
-
-    }
+    BehaviorParameters m_BehaviorParameters;
 
     public override void Initialize()
     {
-
+        m_BehaviorParameters = gameObject.GetComponent<BehaviorParameters>();
         team = Team.Blue;
         m_Transform = new Vector3(transform.position.x + 0f, transform.position.y + 0f, transform.position.z + 0f);
 
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Ball = Ball.GetComponent<Rigidbody>();
 
-        spawnLocation = m_Rigidbody.transform.position;
-        spawnRotation = m_Rigidbody.transform.rotation;
+        m_Rigidbody = GetComponent<Rigidbody>();
+        m_Ball = Ball.GetComponent<Rigidbody>();
 
-        ballSpawnLocation = m_Ball.transform.position;
-        ballSpawnRotation = m_Ball.transform.rotation;
+        var ps = new PlayState
+        {
+            CarAgentCurriculum = m_Rigidbody,
+            startingPosition = transform.position,
+            CarAgentScripts = this,
+        };
 
-        areaBounds = Stadium.GetComponent<Collider>().bounds;
+        gameArea.playState.Add(ps);
+        m_PlayerIndex = gameArea.playState.IndexOf(ps);
+        ps.playerIndix = m_PlayerIndex;
+
+
+
+        gameAreaBounds = Stadium.GetComponent<Collider>().bounds;
 
     }
 
@@ -183,11 +108,11 @@ public class CarAgentCurriculum : Agent
         var randomSpawnPos = Vector3.zero;
         while (foundNewSpawnLocation == false)
         {
-            var randomPosX = UnityEngine.Random.Range(-areaBounds.extents.x * 1,
-                areaBounds.extents.x * 1);
+            var randomPosX = UnityEngine.Random.Range(-gameAreaBounds.extents.x * 1,
+                gameAreaBounds.extents.x * 1);
 
-            var randomPosZ = UnityEngine.Random.Range(-areaBounds.extents.z * 1,
-                areaBounds.extents.z * 1);
+            var randomPosZ = UnityEngine.Random.Range(-gameAreaBounds.extents.z * 1,
+                gameAreaBounds.extents.z * 1);
 
             randomSpawnPos = Stadium.transform.position + new Vector3(randomPosX, 1f, randomPosZ);
             if (Physics.CheckBox(randomSpawnPos, new Vector3(2.5f, 0.01f, 2.5f)) == false)
@@ -301,7 +226,7 @@ public class CarAgentCurriculum : Agent
         sensor.AddObservation(CurriuculumRewardZone22.position);
         sensor.AddObservation(CurriuculumRewardZone23.position);
         sensor.AddObservation(CurriculumNegativeRewardZone.position);
-        
+
 
         //distance to reward zones
         sensor.AddObservation(Vector3.Distance(CurriuculumRewardZone.transform.position, transform.position));

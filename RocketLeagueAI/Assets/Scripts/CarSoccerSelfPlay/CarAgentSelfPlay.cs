@@ -78,15 +78,15 @@ public class CarAgentSelfPlay : Agent
         agentRb = GetComponent<Rigidbody>();
         m_Ball = Ball.GetComponent<Rigidbody>();
 
-        var ps = new PlayState
+        var ps = new PlayerState
         {
             agentRb = agentRb,
             startingPos = transform.position,
             agentScript = this,
         };
 
-        area.playState.Add(ps);
-        m_PlayerIndex = area.playState.IndexOf(ps);
+        area.playerState.Add(ps);
+        m_PlayerIndex = area.playerState.IndexOf(ps);
         ps.playerIndex = m_PlayerIndex;
 
     }
