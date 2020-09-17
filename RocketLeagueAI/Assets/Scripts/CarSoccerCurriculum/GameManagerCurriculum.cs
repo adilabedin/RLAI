@@ -63,6 +63,31 @@ public class GameManagerCurriculum : MonoBehaviour
         }
     }
 
+    public void ZoneTouched(CarAgentCurriculum.Team scoredTeam)
+    {
+        foreach (var ps in playState)
+        {
+            if (ps.CarAgentScripts.team == scoredTeam)
+            {
+                print("pos zone touched");
+                ps.CarAgentScripts.AddReward(+1);
+            }
+        }
+    }
+
+    public void NegZoneTouched(CarAgentCurriculum.Team scoredTeam)
+    {
+        foreach (var ps in playState)
+        {
+            if (ps.CarAgentScripts.team == scoredTeam)
+            {
+                print("neg zone touched");
+                ps.CarAgentScripts.AddReward(-1);
+            }
+        }
+
+    }
+
     public void ResetBall()
     {
         ball.transform.position = ballStartingPos;
