@@ -102,6 +102,50 @@ public class CarAgentCurriculum : Agent
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "curriculumReward")
+        {
+            AddReward(1);
+        }
+        if (other.tag == "curriculumReward02")
+        {
+            AddReward(0.1f);
+        }
+        if (other.tag == "curriculumReward03")
+        {
+            AddReward(0.1f);
+        }
+        if (other.tag == "curriculumReward1")
+        {
+            AddReward(1);
+        }
+        if (other.tag == "curriculumReward12")
+        {
+            AddReward(0.1f);
+        }
+        if (other.tag == "curriculumReward13")
+        {
+            AddReward(0.1f);
+        }
+        if (other.tag == "curriculumReward2")
+        {
+            AddReward(1f);
+        }
+        if (other.tag == "curriculumReward22")
+        {
+            AddReward(0.1f);
+        }
+        if (other.tag == "curriculumReward23")
+        {
+            AddReward(0.1f);
+        }
+        if (other.tag == "curriculumNegReward")
+        {
+            AddReward(-1);
+        }
+    }
+
     public Vector3 GetRandomSpawnPos()
     {
         var foundNewSpawnLocation = false;
@@ -401,7 +445,7 @@ public class CarAgentCurriculum : Agent
 
         if (collidedObj.gameObject.CompareTag("Ball"))
         {
-            AddReward(2f);
+            AddReward(0.2f);
             print("rewardTouch");
         }
 

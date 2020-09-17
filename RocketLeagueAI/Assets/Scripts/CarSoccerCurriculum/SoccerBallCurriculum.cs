@@ -20,48 +20,4 @@ public class SoccerBallCurriculum : MonoBehaviour
             gameArea.GoalTouched(CarAgentCurriculum.Team.Blue);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "curriculumReward")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward02")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward03")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward1")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward12")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward13")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward2")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward22")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumReward23")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-        if (other.tag == "curriculumNegReward")
-        {
-            gameArea.ZoneTouched(CarAgentCurriculum.Team.Blue);
-        }
-    }
 }
