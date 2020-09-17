@@ -16,12 +16,10 @@ public class SoccerBall : MonoBehaviour
         // Touched goal.
         if (col.gameObject.CompareTag(orangeGoalTag))
         {
-            GameManager.gameManager.GoalScored();
             agent.ScoredAGoal();
         }
         if (col.gameObject.CompareTag(blueGoalTag))
         {
-            GameManager.gameManager.GoalScored();
             agent.ConcededAGoal();
         }
     }

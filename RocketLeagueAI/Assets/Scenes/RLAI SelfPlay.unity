@@ -1514,7 +1514,7 @@ MonoBehaviour:
     VectorActionSize: 0600000008000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 11400000, guid: 3ab7e1924092948d6812454d63ff69c5, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SelfPlay
@@ -2936,10 +2936,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &179065711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,10 +3644,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &290570677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,10 +4328,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &323588987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5270,10 +5258,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &473039623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,10 +5735,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &523269920
 GameObject:
   m_ObjectHideFlags: 0
@@ -7782,10 +7762,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &709501295
 GameObject:
   m_ObjectHideFlags: 0
@@ -8755,10 +8731,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &810667133
 GameObject:
   m_ObjectHideFlags: 0
@@ -9994,10 +9966,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &956414960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13632,10 +13600,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1241473397
 GameObject:
   m_ObjectHideFlags: 0
@@ -14515,10 +14479,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1345164553
 GameObject:
   m_ObjectHideFlags: 0
@@ -19065,10 +19025,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1724939547
 GameObject:
   m_ObjectHideFlags: 0
@@ -20086,10 +20042,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1775344296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20375,10 +20327,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1785505638
 GameObject:
   m_ObjectHideFlags: 0
@@ -21461,10 +21409,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1845166346
 GameObject:
   m_ObjectHideFlags: 0
@@ -23246,10 +23190,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1933951257
 GameObject:
   m_ObjectHideFlags: 0
@@ -24028,10 +23968,6 @@ MonoBehaviour:
   ballRb: {fileID: 0}
   ballStartingPos: {x: 0, y: 0, z: 0}
   canResetBall: 0
-  score: 0
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1984737312
 GameObject:
   m_ObjectHideFlags: 0
@@ -26742,7 +26678,7 @@ MonoBehaviour:
     VectorActionSize: 0600000008000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 11400000, guid: 3ab7e1924092948d6812454d63ff69c5, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SelfPlay

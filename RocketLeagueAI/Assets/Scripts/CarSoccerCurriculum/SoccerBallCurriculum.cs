@@ -19,12 +19,12 @@ public class SoccerBallCurriculum : MonoBehaviour
         // Touched goal.
         if (col.gameObject.CompareTag(orangeGoalTag))
         {
-            GameManagerCurriculum.gameManager.GoalScored();
+            //GameManagerCurriculum.gameManager.GoalScored();
             agent.ScoredAGoal();
         }
         if (col.gameObject.CompareTag(blueGoalTag))
         {
-            GameManagerCurriculum.gameManager.GoalScored();
+            //GameManagerCurriculum.gameManager.GoalScored();
             agent.ConcededAGoal();
         }
     }

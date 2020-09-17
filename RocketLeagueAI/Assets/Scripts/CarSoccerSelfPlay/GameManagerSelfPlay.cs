@@ -5,10 +5,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-//Create our new type of event... It will trigger when we score a goal
-[System.Serializable]
-public class GoalEventss : UnityEvent<int> { }
-
 public class PlayState
 {
     public int playerIndex;
@@ -46,25 +42,8 @@ public class GameManagerSelfPlay : MonoBehaviour
         m_ResetParams = Academy.Instance.EnvironmentParameters;
     }
 
-    //store the score. Whenever we score a goal this number will go up by 1
-    public int score = 0;
-
-    //store a reference to the GameManager in the scene. (Lookup "sigletons" for more info)
     public static GameManagerSelfPlay gameManager;
 
-
-    //store a reference to all the things we need to tell when a goal is scored
-    public GoalEventss OnGoalScored;
-
-    //When we are told a goal is scored...
-    public void GoalScored()
-    {
-        //increase the score value by 1
-        score++;
-
-        //tell everyone else that a goal was scored.
-        OnGoalScored.Invoke(score);
-    }
 
     public void GoalTouched(CarAgentSelfPlay.Team scoredTeam)
     {
@@ -79,7 +58,7 @@ public class GameManagerSelfPlay : MonoBehaviour
             {
                 ps.agentScript.AddReward(-1);
             }
-            ps.agentScript.EndEpisode(); 
+            ps.agentScript.EndEpisode();
 
         }
     }
@@ -91,4 +70,3 @@ public class GameManagerSelfPlay : MonoBehaviour
         ballRb.angularVelocity = Vector3.zero;
     }
 }
-
